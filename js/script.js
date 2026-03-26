@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
     
@@ -7,23 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.toggle('active');
     });
 
-    // Image Gallery
     const thumbnails = document.querySelectorAll('.thumbnail');
     const mainImg = document.getElementById('main-product-image');
     const prevBtn = document.getElementById('slider-prev');
     const nextBtn = document.getElementById('slider-next');
 
-    // we mock image src names here based on typical sequence
     let currentImageIndex = 0;
     const images = [
-        'assets/Group 1000004277.png', // Just using available ones as placeholders
+        'assets/Group 1000004277.png', 
         'assets/Group 1000004093.png',
         'assets/Group 1000004283.png',
         'assets/Group 1000004277.png'
     ];
 
     function updateGallery(index) {
-        // mainImg.src = images[index]; // disabled for placeholder demo to not break UI if img miss
         thumbnails.forEach((thumb, i) => {
             if (i === index) thumb.classList.add('active');
             else thumb.classList.remove('active');
@@ -63,11 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fragrance Radios
     const fragranceRadios = document.querySelectorAll('input[name="fragrance1"], input[name="fragrance2"]');
     fragranceRadios.forEach(radio => {
         radio.addEventListener('change', updateAddToCartLink);
-        // add selected class to parent
         radio.addEventListener('change', (e) => {
             const name = e.target.name;
             document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
@@ -79,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add to cart logic
     function updateAddToCartLink() {
         const addToCartBtn = document.getElementById('add-to-cart-btn');
         if(!addToCartBtn) return;
@@ -97,16 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
         addToCartBtn.href = link;
         console.log("Updated Add To Cart Link:", link);
     }
-    updateAddToCartLink(); // init
+    updateAddToCartLink(); 
 
-    // Accordion
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     accordionHeaders.forEach(header => {
         header.addEventListener('click', () => {
             const item = header.closest('.accordion-item');
             item.classList.toggle('active');
             
-            // update icon
             const icon = header.querySelector('.icon');
             if(item.classList.contains('active')) {
                 icon.textContent = '-';
@@ -116,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Counter animation
     const counters = document.querySelectorAll('.counter');
     let counted = false;
 
