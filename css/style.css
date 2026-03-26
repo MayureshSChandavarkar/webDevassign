@@ -1,0 +1,530 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+    background-color: #fafafa;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+p {
+    font-size: 14px;
+    color: #666;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.header {
+    background: transparent;
+    padding: 25px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #4b8b6b; /* matches image */
+}
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav a {
+    text-decoration: none;
+    color: #1a4231;
+    font-weight: 500;
+    font-size: 15px;
+}
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+.btn-solid {
+    background: #0b4d26;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btn-solid:hover {
+    background: #08381b;
+}
+
+/* Desktop to Mobile */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    .nav.active {
+        display: flex;
+    }
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: url('../assets/Group 1000004277.png') no-repeat center center;
+    background-size: cover;
+    background-color: #dcedef; 
+    padding: 160px 0 100px; /* added top padding to account for absolute header */
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+.hero > .container {
+    width: 100%;
+}
+.hero-content {
+    max-width: 600px;
+    text-align: left;
+}
+.badge {
+    background: #6a957a;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+.hero h2 {
+    font-size: 64px;
+    margin-bottom: 30px;
+    color: #113620;
+    font-weight: 800;
+    line-height: 1.1;
+}
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.stat img {
+    height: 45px;
+    margin-bottom: 5px;
+}
+.stat-text {
+    font-size: 16px;
+    color: #3f604d;
+    font-weight: 500;
+}
+.hero-btn {
+    padding: 14px 35px;
+    font-size: 16px;
+}
+
+/* Product Section */
+.product-section {
+    padding: 60px 0;
+    background: #fff;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Image Gallery */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.main-img-container {
+    position: relative;
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+}
+.main-img {
+    height: 400px;
+    object-fit: contain;
+}
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.slider-prev { left: 10px; }
+.slider-next { right: 10px; }
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.thumbnail:hover, .thumbnail.active {
+    border-color: #0b4d26;
+}
+
+/* Product Details */
+.product-info h3 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+.reviews {
+    color: #f5a623;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.description {
+    margin-bottom: 20px;
+}
+
+/* Subscription Box */
+.subscription-options {
+    margin-top: 20px;
+}
+.sub-option {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.sub-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background: #fdfdfd;
+}
+.sub-header input[type="radio"] {
+    margin-right: 15px;
+}
+.sub-header span {
+    font-weight: bold;
+    flex-grow: 1;
+}
+.sub-header .price {
+    font-weight: bold;
+}
+.sub-header .old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-weight: normal;
+    font-size: 12px;
+    margin-left: 5px;
+}
+.sub-content {
+    display: none;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+.sub-option.active .sub-content {
+    display: block;
+}
+.sub-option.active .sub-header {
+    border-bottom: 1px solid #ddd;
+}
+.most-popular-tag {
+    background: #0b4d26;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* Fragrance Selection */
+.fragrance-selection h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.fragrance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.fragrance-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.fragrance-item input {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.fragrance-item img {
+    height: 60px;
+    margin-bottom: 5px;
+}
+.fragrance-item span {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8a8a8a;
+}
+.fragrance-item.selected span {
+    color: #0b4d26;
+}
+.fragrance-item.selected {
+    border-color: #0b4d26;
+    background: #fdfdfd;
+}
+.best-seller-tag {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #0b4d26;
+    color: white !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Whats Included */
+.included-grid {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.included-item {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+.included-item h5 {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.included-item img {
+    height: 80px;
+}
+
+.bullet-points {
+    list-style: none;
+    font-size: 13px;
+}
+.bullet-points li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+.bullet-points li::before {
+    content: '✔';
+    color: #0b4d26;
+    position: absolute;
+    left: 0;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Collection Section */
+.collection-section {
+    padding: 60px 0;
+    background: #fff;
+}
+.collection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.accordion {
+    border-top: 1px solid #eee;
+}
+.accordion-item {
+    border-bottom: 1px solid #eee;
+}
+.accordion-header {
+    width: 100%;
+    padding: 20px 0;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.accordion-content {
+    display: none;
+    padding-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+/* Counters */
+.counter-section {
+    background: #0b4d26;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.counter-item {
+    padding: 20px;
+}
+.counter-item h3 {
+    font-size: 48px;
+    display: inline-block;
+    margin: 0;
+}
+.counter-item span {
+    font-size: 48px;
+    font-weight: bold;
+}
+.counter-item p {
+    color: #fff;
+    opacity: 0.8;
+}
+@media (max-width: 768px) {
+    .counter-grid { grid-template-columns: 1fr 1fr; }
+    .product-grid, .collection-grid { grid-template-columns: 1fr; }
+}
+
+/* Table Section */
+.table-section {
+    padding: 60px 0;
+    text-align: center;
+    background: #fff;
+}
+.table-section h2 {
+    margin-bottom: 40px;
+}
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.comparison-table th {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+.comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+}
+.comparison-table tr td:first-child {
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+.comparison-table td.highlight {
+    background: #f4fbf7;
+}
+
+/* Footer */
+.footer {
+    background: #0b4d26;
+    color: #fff;
+    padding: 60px 0;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.footer h4 { margin-bottom: 20px; }
+.footer ul { list-style: none; }
+.footer ul li a { color: #fff; opacity: 0.8; text-decoration: none; }
+.footer .newsletter form { display: flex; align-items:stretch;}
+.footer .newsletter input { padding: 10px; border: none; flex: 1; }
+.footer .newsletter button { padding: 10px 20px; background: #a57448; color: #fff; border: none; cursor: pointer; }
