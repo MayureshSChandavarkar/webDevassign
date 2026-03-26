@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const runCounters = () => {
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const speed = 200; // lower is faster
+            const speed = 200; 
             
             const updateCount = () => {
                 const count = +counter.innerText;

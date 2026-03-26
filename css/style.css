@@ -27,7 +27,6 @@ a {
     color: inherit;
 }
 
-/* Header */
 .header {
     background: transparent;
     padding: 25px 0;
@@ -125,7 +124,7 @@ a {
     background: url('../assets/Group 1000004277.png') no-repeat center center;
     background-size: cover;
     background-color: #dcedef; 
-    padding: 160px 0 100px; /* added top padding to account for absolute header */
+    padding: 160px 0 100px; 
     position: relative;
     min-height: 80vh;
     display: flex;
@@ -409,13 +408,13 @@ a {
     align-items: center;
 }
 .accordion {
-    /* Remove the old top border and add a gap between the boxes */
+    
     display: flex;
     flex-direction: column;
     gap: 15px; 
 }
 .accordion-item {
-    /* Add the full border, rounded corners, and spacing */
+    
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #fff;
@@ -423,21 +422,21 @@ a {
 }
 .accordion-header {
     width: 100%;
-    /* Add padding on all sides so text doesn't touch the new borders */
+    
     padding: 20px; 
     text-align: left;
     background: none;
     border: none;
     font-size: 18px;
     font-weight: 700;
-    color: #0d3b1f; /* Dark green text to match the design */
+    color: #0d3b1f; 
     cursor: pointer;
     display: flex;
     justify-content: space-between;
 }
 .accordion-content {
     display: none;
-    /* Match the header's side padding */
+    
     padding: 0 20px 20px 20px; 
     color: #666;
     font-size: 14px;
@@ -447,7 +446,7 @@ a {
 }
 
 .counter-section {
-    background: linear-gradient(0deg, #0e5400 0%, #1a4231 80%);
+    background: linear-gradient(0deg, #126e00 0%, #1a4231 80%);
     color: #fff;
     padding: 60px 0;
     text-align: center;
@@ -507,7 +506,7 @@ a {
     color: #999;
     font-weight: 500;
 }
-/* Solid rows for non-highlighted items */
+
 .comparison-table th {
     border-bottom: 1px solid #000000;
 }
@@ -522,7 +521,7 @@ a {
     color: #666;
 }
 
-/* GTG Highlight styling */
+
 .comparison-table th.highlight {
     background: #eafbf0;
     border-bottom: 1px dashed #333;
