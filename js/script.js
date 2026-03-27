@@ -24,11 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (i === index) thumb.classList.add('active');
             else thumb.classList.remove('active');
         });
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+            if (i === index) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
         currentImageIndex = index;
+        if(mainImg) mainImg.src = images[index];
     }
 
     thumbnails.forEach((thumb, index) => {
         thumb.addEventListener('click', () => {
+            updateGallery(index);
+        });
+    });
+
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
             updateGallery(index);
         });
     });
@@ -59,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const fragranceRadios = document.querySelectorAll('input[name="fragrance1"], input[name="fragrance2"]');
+    const fragranceRadios = document.querySelectorAll('input[name="fragrance1"], input[name="fragrance_d1"], input[name="fragrance_d2"]');
     fragranceRadios.forEach(radio => {
         radio.addEventListener('change', updateAddToCartLink);
         radio.addEventListener('change', (e) => {
@@ -78,13 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!addToCartBtn) return;
         
         const subType = document.querySelector('input[name="subscription"]:checked')?.value || 'single';
-        const frag1 = document.querySelector('input[name="fragrance1"]:checked')?.value || 'original';
-        
-        let link = `#cart?type=${subType}&f1=${frag1}`;
-        
-        if (subType === 'double') {
-            const frag2 = document.querySelector('input[name="fragrance2"]:checked')?.value || 'original';
-            link += `&f2=${frag2}`;
+        let link = '';
+
+        if (subType === 'single') {
+            const frag1 = document.querySelector('input[name="fragrance1"]:checked')?.value || 'original';
+            link = `#cart?type=${subType}&f1=${frag1}`;
+        } else if (subType === 'double') {
+            const fragD1 = document.querySelector('input[name="fragrance_d1"]:checked')?.value || 'original';
+            const fragD2 = document.querySelector('input[name="fragrance_d2"]:checked')?.value || 'original';
+            link = `#cart?type=${subType}&f1=${fragD1}&f2=${fragD2}`;
         }
         
         addToCartBtn.href = link;

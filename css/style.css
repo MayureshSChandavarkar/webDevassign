@@ -40,6 +40,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .logo {
     font-size: 28px;
@@ -62,6 +63,9 @@ a {
     list-style: none;
     display: flex;
     gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .nav a {
     text-decoration: none;
@@ -84,6 +88,7 @@ a {
     cursor: pointer;
     border: none;
     text-align: center;
+    transition: all 0.3s ease;
 }
 .btn-solid {
     background: linear-gradient(0deg, #0e5400 0%, #1a4231 100%);
@@ -114,6 +119,8 @@ a {
         flex-direction: column;
         width: 100%;
         text-align: center;
+        position: static;
+        transform: none;
     }
     .hamburger {
         display: block;
@@ -121,7 +128,7 @@ a {
 }
 
 .hero {
-    background: url('../assets/Group 1000004277.png') no-repeat center center;
+    background: url('../assets/7.jpeg') no-repeat center center;
     background-size: cover;
     background-color: #dcedef; 
     padding: 160px 0 100px; 
@@ -205,18 +212,31 @@ a {
     object-fit: contain;
 }
 .slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    border: 1px solid #ddd;
+    background: transparent;
+    border: 1px solid #113620;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
-.slider-prev { left: 10px; }
-.slider-next { right: 10px; }
+.slider-arrow:hover {
+    background: #eadecd;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #113620;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.dot.active {
+    background-color: #113620;
+}
 .thumbnail-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -283,6 +303,11 @@ a {
     display: none;
     padding: 15px;
     border-top: 1px solid #ddd;
+    animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
     background: #fff;
 }
 .sub-option.active .sub-content {
@@ -440,6 +465,7 @@ a {
     padding: 0 20px 20px 20px; 
     color: #666;
     font-size: 14px;
+    animation: fadeIn 0.4s ease;
 }
 .accordion-item.active .accordion-content {
     display: block;

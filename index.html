@@ -40,9 +40,9 @@
                     </span>
                     <h2>Live your best life.</h2>
                     <div class="stats">
-                        <div class="stat"><img src="assets/10x.svg" alt="10x"><span class="stat-text">power</span></div>
-                        <div class="stat"><img src="assets/9.svg" alt="9"><span class="stat-text">ingredients</span></div>
-                        <div class="stat"><img src="assets/20K+.svg" alt="20K+"><span class="stat-text">happy customers</span></div>
+                        <div class="stat"><img loading="lazy" src="assets/10x.svg" alt="10x"><span class="stat-text">power</span></div>
+                        <div class="stat"><img loading="lazy" src="assets/9.svg" alt="9"><span class="stat-text">ingredients</span></div>
+                        <div class="stat"><img loading="lazy" src="assets/20K+.svg" alt="20K+"><span class="stat-text">happy customers</span></div>
                     </div>
                     <a href="#shop" class="btn btn-solid hero-btn">Shop Now</a>
                 </div>
@@ -53,15 +53,27 @@
             <div class="container product-grid">
                 <div class="gallery">
                     <div class="main-img-container">
-                        <button class="slider-arrow slider-prev" id="slider-prev">&larr;</button>
-                        <img src="assets/Group 1000004277.png" alt="Perfume" id="main-product-image" class="main-img">
-                        <button class="slider-arrow slider-next" id="slider-next">&rarr;</button>
+                        <img loading="lazy" src="assets/Group 1000004277.png" alt="Perfume" id="main-product-image" class="main-img">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 30px;">
+                            <button class="slider-arrow slider-prev" id="slider-prev">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#113620" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                            </button>
+                            <div class="slider-dots" id="slider-dots" style="display: flex; gap: 8px;">
+                                <span class="dot active" data-index="0"></span>
+                                <span class="dot" data-index="1"></span>
+                                <span class="dot" data-index="2"></span>
+                                <span class="dot" data-index="3"></span>
+                            </div>
+                            <button class="slider-arrow slider-next" id="slider-next">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#113620" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
                     </div>
                     <div class="thumbnail-grid">
-                        <div class="thumbnail active"><img src="assets/Group 1000004277.png" alt="thumb1"></div>
-                        <div class="thumbnail"><img src="assets/Group 1000004093.png" alt="thumb2"></div>
-                        <div class="thumbnail"><img src="assets/Group 1000004283.png" alt="thumb3"></div>
-                        <div class="thumbnail"><img src="assets/Group 1000004277.png" alt="thumb4"></div>
+                        <div class="thumbnail active"><img loading="lazy" src="assets/Group 1000004277.png" alt="thumb1"></div>
+                        <div class="thumbnail"><img loading="lazy" src="assets/Group 1000004093.png" alt="thumb2"></div>
+                        <div class="thumbnail"><img loading="lazy" src="assets/Group 1000004283.png" alt="thumb3"></div>
+                        <div class="thumbnail"><img loading="lazy" src="assets/Group 1000004277.png" alt="thumb4"></div>
                     </div>
                 </div>
 
@@ -78,7 +90,7 @@
                             <label class="sub-header">
                                 <input type="radio" name="subscription" value="single" checked>
                                 <span>Single Subscription</span>
-                                <span class="price">$99.99</span> <span class="old-price">$144</span>
+                                <span class="price">$99.99</span> <span class="old-price">$146</span>
                             </label>
                             <div class="sub-content">
                                 <div class="fragrance-selection">
@@ -87,30 +99,34 @@
                                         <label class="fragrance-item selected">
                                             <span class="best-seller-tag">BEST-SELLER</span>
                                             <input type="radio" name="fragrance1" value="original" checked>
-                                            <img src="assets/Group 1000004277.png" alt="Original">
+                                            <img loading="lazy" src="assets/69.jpeg" alt="Original">
                                             <span>Original</span>
                                         </label>
                                         <label class="fragrance-item">
                                             <input type="radio" name="fragrance1" value="lily">
-                                            <img src="assets/Group 1000004093.png" alt="Lily">
+                                            <img loading="lazy" src="assets/9.jpeg" alt="Lily">
                                             <span>Lily</span>
                                         </label>
                                         <label class="fragrance-item">
                                             <input type="radio" name="fragrance1" value="rose">
-                                            <img src="assets/Group 1000004283.png" alt="Rose">
+                                            <img loading="lazy" src="assets/45.jpeg" alt="Rose">
                                             <span>Rose</span>
                                         </label>
                                     </div>
                                 </div>
                                 <p>What's Included:</p>
                                 <div class="included-grid">
-                                    <div class="included-item">
+                                    <div class="included-item" style="flex: 1;">
                                         <h5>Every 30 Days</h5>
-                                        <img src="assets/Group 1000004277.png" alt="1 bottle">
+                                        <img loading="lazy" src="assets/69.jpeg" alt="1 bottle">
                                     </div>
-                                    <div class="included-item">
-                                        <h5>One Time (Free)</h5>
-                                        <img src="assets/Group 1000004283.png" alt="Samplers">
+                                    <div class="included-item" style="flex: 2;">
+                                        <h5>One Time <b>(Free)</b></h5>
+                                        <div style="display: flex; justify-content: center; gap: 8px; align-items: center; height: 80px;">
+                                            <img loading="lazy" src="assets/69.jpeg" alt="Original Sampler" style="height: 50px; width: auto;">
+                                            <img loading="lazy" src="assets/9.jpeg" alt="Lily Sampler" style="height: 50px; width: auto;">
+                                            <img loading="lazy" src="assets/45.jpeg" alt="Rose Sampler" style="height: 50px; width: auto;">
+                                        </div>
                                     </div>
                                 </div>
                                 <ul class="bullet-points">
@@ -128,7 +144,7 @@
                             <label class="sub-header">
                                 <input type="radio" name="subscription" value="double">
                                 <span>Double Subscription</span>
-                                <span class="price">$169.99</span> <span class="old-price">$144</span>
+                                <span class="price">$169.99</span> <span class="old-price">$146</span>
                             </label>
                             <div class="sub-content">
                                 <div class="fragrance-selection">
@@ -137,17 +153,17 @@
                                         <label class="fragrance-item selected">
                                             <span class="best-seller-tag">BEST-SELLER</span>
                                             <input type="radio" name="fragrance_d1" value="original" checked>
-                                            <img src="assets/Group 1000004277.png" alt="Original">
+                                            <img loading="lazy" src="assets/69.jpeg" alt="Original">
                                             <span>Original</span>
                                         </label>
                                         <label class="fragrance-item">
                                             <input type="radio" name="fragrance_d1" value="lily">
-                                            <img src="assets/Group 1000004093.png" alt="Lily">
+                                            <img loading="lazy" src="assets/9.jpeg" alt="Lily">
                                             <span>Lily</span>
                                         </label>
                                         <label class="fragrance-item">
                                             <input type="radio" name="fragrance_d1" value="rose">
-                                            <img src="assets/Group 1000004283.png" alt="Rose">
+                                            <img loading="lazy" src="assets/45.jpeg" alt="Rose">
                                             <span>Rose</span>
                                         </label>
                                     </div>
@@ -156,30 +172,34 @@
                                         <label class="fragrance-item selected">
                                             <span class="best-seller-tag">BEST-SELLER</span>
                                             <input type="radio" name="fragrance_d2" value="original" checked>
-                                            <img src="assets/Group 1000004277.png" alt="Original">
+                                            <img loading="lazy" src="assets/69.jpeg" alt="Original">
                                             <span>Original</span>
                                         </label>
                                         <label class="fragrance-item">
                                             <input type="radio" name="fragrance_d2" value="lily">
-                                            <img src="assets/Group 1000004093.png" alt="Lily">
+                                            <img loading="lazy" src="assets/9.jpeg" alt="Lily">
                                             <span>Lily</span>
                                         </label>
                                         <label class="fragrance-item">
                                             <input type="radio" name="fragrance_d2" value="rose">
-                                            <img src="assets/Group 1000004283.png" alt="Rose">
+                                            <img loading="lazy" src="assets/45.jpeg" alt="Rose">
                                             <span>Rose</span>
                                         </label>
                                     </div>
                                 </div>
                                 <p style="margin-bottom: 15px; font-weight: 500;">What's Included:</p>
                                 <div class="included-grid">
-                                    <div class="included-item">
+                                    <div class="included-item" style="flex: 1;">
                                         <h5>Every 30 Days</h5>
-                                        <img src="assets/Group 1000004277.png" alt="1 bottle" style="margin-top: 10px;">
+                                        <img loading="lazy" src="assets/69.jpeg" alt="1 bottle" style="margin-top: 10px;">
                                     </div>
-                                    <div class="included-item">
-                                        <h5>One Time (Free)</h5>
-                                        <img src="assets/Group 1000004283.png" alt="Samplers" style="margin-top: 10px;">
+                                    <div class="included-item" style="flex: 2;">
+                                        <h5>One Time <b>(Free)</b></h5>
+                                        <div style="display: flex; justify-content: center; gap: 8px; align-items: center; height: 80px; margin-top: 10px;">
+                                            <img loading="lazy" src="assets/69.jpeg" alt="Original Sampler" style="height: 50px; width: auto;">
+                                            <img loading="lazy" src="assets/9.jpeg" alt="Lily Sampler" style="height: 50px; width: auto;">
+                                            <img loading="lazy" src="assets/45.jpeg" alt="Rose Sampler" style="height: 50px; width: auto;">
+                                        </div>
                                     </div>
                                 </div>
                                 <ul class="bullet-points">
@@ -231,7 +251,7 @@
                     </div>
                 </div>
                 <div class="collection-image">
-                    <img src="assets/Group 1000004093.png" alt="Collection Image" style="border-radius:20px;">
+                    <img loading="lazy" src="assets/1.jpeg" alt="Collection Image" style="border-radius:20px;">
                 </div>
             </div>
         </section>
@@ -258,6 +278,7 @@
 
         <section class="table-section">
             <div class="container">
+                <div style="font-size: 24px; font-weight: bold; color: #113620; margin-bottom: 10px; letter-spacing: 3px;">---</div>
                 <h2>Why GTG is the #1 Choice</h2>
                 <div style="overflow-x: auto;">
                     <table class="comparison-table">
@@ -265,11 +286,11 @@
                             <tr>
                                 <th style="text-align: left; font-weight: 700; color: #333;">Qualities</th>
                                 <th class="highlight">
-                                    <img src="assets/Group 1000004277.png" alt="GTG" style="height: 70px; border-radius: 10px; margin-bottom: 5px; background: #eadecd;"><br>GTG
+                                    <img loading="lazy" src="assets/Group 1000004283.png" alt="GTG" style="height: 70px; border-radius: 10px; margin-bottom: 5px; background: #eadecd;"><br>GTG
                                 </th>
-                                <th><img src="assets/Frame 1000004036.svg" alt="Arose"><br><span>Arose</span></th>
-                                <th><img src="assets/Frame 1000004044.svg" alt="Bella"><br><span>Bella</span></th>
-                                <th><img src="assets/Frame 1000004063.svg" alt="Daisies"><br><span>Daisies</span></th>
+                                <th><img loading="lazy" src="assets/2.jpeg" alt="Arose"><br><span>Arose</span></th>
+                                <th><img loading="lazy" src="assets/4.jpeg" alt="Bella"><br><span>Bella</span></th>
+                                <th><img loading="lazy" src="assets/5.jpeg" alt="Daisies"><br><span>Daisies</span></th>
                             </tr>
                         </thead>
                         <tbody>
