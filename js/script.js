@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentImageIndex = 0;
     
-    // Dynamically grab image URLs from the new 8 thumbnails structure!
     const thumbnailImgs = document.querySelectorAll('.thumbnail img');
     const images = Array.from(thumbnailImgs).map(img => img.src);
 
@@ -56,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGallery(newIndex);
     });
 
-    // Subscription Toggle
     const subOptions = document.querySelectorAll('.sub-option');
     const subRadios = document.querySelectorAll('input[name="subscription"]');
 
