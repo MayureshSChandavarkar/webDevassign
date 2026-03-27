@@ -12,12 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('slider-next');
 
     let currentImageIndex = 0;
-    const images = [
-        'assets/Group 1000004277.png', 
-        'assets/Group 1000004093.png',
-        'assets/Group 1000004283.png',
-        'assets/Group 1000004277.png'
-    ];
+    
+    // Dynamically grab image URLs from the new 8 thumbnails structure!
+    const thumbnailImgs = document.querySelectorAll('.thumbnail img');
+    const images = Array.from(thumbnailImgs).map(img => img.src);
 
     function updateGallery(index) {
         thumbnails.forEach((thumb, i) => {

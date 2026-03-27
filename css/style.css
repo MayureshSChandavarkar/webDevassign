@@ -143,6 +143,7 @@ a {
 .hero-content {
     max-width: 600px;
     text-align: left;
+    margin-top: -120px;
 }
 .badge {
     background: #6a957a;
@@ -202,14 +203,30 @@ a {
 }
 .main-img-container {
     position: relative;
-    background: #f7f7f7;
-    border-radius: 10px;
-    padding: 40px;
+    background: #e1dfde;
+    border-radius: 15px;
+    border: 3px solid #488ae8;
+    padding: 20px 20px 20px 20px;
     text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.main-img-container > div {
+    position: relative;
+    z-index: 1;
 }
 .main-img {
-    height: 400px;
-    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    margin: 0;
 }
 .slider-arrow {
     background: transparent;
@@ -240,17 +257,25 @@ a {
 .thumbnail-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-rows: auto auto;
+    gap: 15px;
 }
 .thumbnail {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
+    border: none;
+    border-radius: 12px;
+    padding: 0;
     cursor: pointer;
     transition: 0.3s;
+    height: 100px;
+    overflow: hidden;
+}
+.thumbnail img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .thumbnail:hover, .thumbnail.active {
-    border-color: #0b4d26;
+    border: 2px solid #0b4d26;
 }
 
 .product-info h3 {
@@ -286,11 +311,12 @@ a {
     margin-right: 15px;
 }
 .sub-header span {
-    font-weight: bold;
+    font-weight: normal;
     flex-grow: 1;
 }
 .sub-header .price {
     font-weight: bold;
+    flex-grow: 0;
 }
 .sub-header .old-price {
     text-decoration: line-through;
@@ -298,6 +324,7 @@ a {
     font-weight: normal;
     font-size: 12px;
     margin-left: 5px;
+    flex-grow: 0;
 }
 .sub-content {
     display: none;
@@ -329,6 +356,7 @@ a {
 .fragrance-selection h4 {
     margin-bottom: 10px;
     font-size: 14px;
+    font-weight: normal;
 }
 .fragrance-grid {
     display: grid;
@@ -340,26 +368,35 @@ a {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
-    text-align: center;
     cursor: pointer;
     position: relative;
+    display: grid;
+    grid-template-areas: 
+        "radio name"
+        "image image";
+    grid-template-columns: min-content 1fr;
+    align-items: center;
 }
 .fragrance-item input {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    grid-area: radio;
+    margin-right: 8px;
+    cursor: pointer;
 }
 .fragrance-item img {
-    height: 60px;
-    margin-bottom: 5px;
+    grid-area: image;
+    height: 70px;
+    margin: 15px auto 5px auto;
+    justify-self: center;
 }
-.fragrance-item span {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
+.fragrance-item span:not(.best-seller-tag) {
+    grid-area: name;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
     color: #8a8a8a;
+    text-align: left;
 }
-.fragrance-item.selected span {
+.fragrance-item.selected span:not(.best-seller-tag) {
     color: #0b4d26;
 }
 .fragrance-item.selected {
@@ -369,14 +406,15 @@ a {
 .best-seller-tag {
     position: absolute;
     top: -10px;
-    left: 10px;
-    background: #0b4d26;
+    right: -5px;
+    background: #1a4231;
     color: white !important;
     font-size: 10px !important;
     font-weight: bold !important;
     padding: 2px 8px;
     border-radius: 4px;
     text-transform: uppercase;
+    z-index: 2;
 }
 
 .included-grid {
@@ -394,6 +432,8 @@ a {
 .included-item h5 {
     font-size: 12px;
     margin-bottom: 10px;
+    text-align: left;
+    font-weight: normal;
 }
 .included-item img {
     height: 80px;
@@ -524,13 +564,13 @@ a {
     vertical-align: middle;
 }
 .comparison-table th img {
-    height: 60px;
-    border-radius: 12px;
+    height: 90px;
+    border-radius: 16px;
 }
 .comparison-table th span {
-    font-size: 12px;
+    font-size: 14px;
     color: #999;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .comparison-table th {
@@ -553,8 +593,8 @@ a {
     border-bottom: 1px dashed #333;
     border-radius: 20px 20px 0 0;
     color: #333;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 300;
 }
 .comparison-table td.highlight {
     background: #f4fff8;
@@ -586,7 +626,8 @@ a {
     gap: 30px;
 }
 .footer ul { list-style: none; }
-.footer ul li { margin-bottom: 20px; }
+.footer ul li { margin-bottom: 40px; }
+.footer ul li:last-child { margin-bottom: 0; }
 .footer ul li a { 
     color: #fff; 
     opacity: 0.9; 
